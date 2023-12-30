@@ -1,0 +1,454 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font-size: var(--font-size);
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding: 0 30px ;
+}
+
+.left img{
+  width: 100%;
+  height: 70%;
+}
+
+.right, .left{
+  display: flex;
+}
+
+.nav ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.right button {
+  border: none;
+  height: 35px;
+  padding: 10px;
+}
+
+/* Landing */
+.land{
+  display: flex;
+  padding: 0 30px ;
+  justify-content: center;
+  align-items: center;
+  h1{
+    font-size: 50px;
+
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
+.land img{
+  width: 100%;
+}
+
+/* form */
+
+.text {
+  text-align: center;
+}
+
+.text h2 {
+  font-size: 2.4rem;
+  letter-spacing: -0.2px;
+}
+
+.Form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  width: 100%;
+  border: none;
+ 
+}
+
+.Form .fr{
+      flex-direction: column;
+      border-radius: 30px;
+      padding: 18px 30px;
+      background-image: url(./assets/bg-boost-mobile.svg);
+      background-size: cover;
+      background-position: 40px -40px;
+}
+
+.gj{
+  background-color: rgb(42, 9, 68);
+  border-radius: 20px;
+  width: 70%;
+}
+
+.fr {
+  display: flex;
+  gap: 8px;
+}
+
+.result{
+  background-color: rgb(239, 245, 245);
+  padding: 15px;
+}
+
+.fr input{
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.fr button{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* card */
+.Cards {
+  position: relative;
+  margin-top: 97px;
+}
+
+.Cards::after {
+  content: "";
+  position: absolute;
+  width: 75%;
+  max-width: 1100px;
+  height: 8px;
+  top: 43%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  background-color: cyan;
+  z-index: 1;
+}
+
+.Cards .container {
+  display: flex;
+  justify-content: space-between;
+  height: 356px;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 6px;
+  padding: 76px 32px 26px;
+  max-width: 350px;
+  height: fit-content;
+  z-index: 50;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.06);
+}
+
+.card:nth-child(2) {
+  align-self: center;
+}
+
+.card:nth-child(3) {
+  align-self: flex-end;
+}
+
+.card .img {
+  position: absolute;
+  top: -44px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: var(--Dark-Violet);
+  z-index: 5;
+}
+
+.card h3 {
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 17px 0;
+  letter-spacing: -0.5px;
+  color: gray;
+}
+
+
+.boostSec {
+  text-align: center;
+  background-image: url('./assets/bg-boost-desktop.svg');
+  background-repeat: no-repeat;
+  background-color: rgb(58, 70, 66);
+  background-size: cover;
+  margin-top: 120px;
+  padding: 54px 0 58px;
+  transition: 0.2s;
+}
+
+
+/* boostSec */
+
+
+.boostSec h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: rgb(238, 231, 231);
+}
+
+.boostSec button {
+  margin-top: 22px;
+}
+
+
+
+
+
+@media (max-width:1199px) {
+  .card {
+      max-width: 300px;
+  }
+}
+
+
+@media (max-width:991px) {
+
+  .Cards .container {
+      flex-wrap: wrap;
+  }
+
+  .Cards::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 400px;
+      top: 43%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 6px;
+      background-color: var(--Cyan);
+      z-index: 1;
+  }
+
+  .card:nth-child(2) {
+      align-self: initial;
+  }
+
+  .card:nth-child(3) {
+      align-self: initial;
+      margin-top: 80px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 418px;
+  }
+
+  .boostSec {
+      margin-top: 360px;
+  }
+
+  footer .left {
+      flex-basis: 31.2%;
+  }
+
+  footer .right {
+      flex-basis: 72%;
+  }
+
+}
+
+@media (max-width:767px) {
+
+  .land {
+      flex-direction: column-reverse;
+  }
+
+  .land .left {
+      text-align: center !important;
+  }
+
+  .land .left p {
+      margin: 0 auto;
+  }
+
+  .land .right img {
+      width: 100%;
+  }
+
+  .Form .fr {
+      flex-direction: column;
+      padding: 18px 30px;
+      background-image: url(./assets/bg-boost-mobile.svg);
+      background-size: cover;
+      background-position: 40px -40px;
+  }
+
+  .Form .fr input[type=text] {
+      width: 100%;
+      font-size: 18px;
+      padding: 16px 28px;
+      letter-spacing: 0;
+  }
+
+  .Form .fr button {
+      width: 100%;
+      font-size: 18px;
+      padding: 16px 28px;
+      font-weight: 500;
+  }
+
+  .Cards {
+      margin-top: 35px;
+  }
+
+  .Cards .container {
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+
+  .Cards::after {
+      display: none;
+  }
+
+  .Cards::before {
+      height: 800px;
+  }
+
+  .card {
+      margin: 86px auto 0;
+      max-width: 420px;
+      text-align: center;
+  }
+
+  .card .img {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .boostSec {
+      margin-top: 680px;
+  }
+
+  footer .container {
+      flex-direction: column;
+  }
+
+  footer .logo {
+      margin-bottom: 26px;
+      text-align: center;
+  }
+
+  footer .right {
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: space-around;
+  }
+
+  footer .right .social {
+      margin-top: 30px;
+  }
+}
+
+@media (max-width:510px) {
+   .boostSec {
+      margin-top: 780px;
+  }
+
+  footer .right {
+      flex-wrap: nowrap;
+      flex-direction: column;
+  }
+
+  footer .right ul:not(.social) {
+      margin-bottom: 20px;
+  }
+
+  footer .right .social {
+      justify-content: space-evenly;
+      width: 80%;
+      margin: 20px auto;
+  }
+}
+
+@media (max-width:355px) {
+   .boostSec {
+      margin-top: 880px;
+  }
+
+  .boostSec h2 {
+      font-size: 1.9rem;
+  }
+
+  .card {
+      padding: 56px 24px 26px;
+  } 
+}
+
+@media (max-width:282px) {
+
+  .landing .container .left h1 {
+      font-size: 2.2rem !important;
+  }
+
+  .boostSec {
+      margin-top: 1000px;
+  }
+
+  .card {
+      padding: 56px 22px 24px;
+  }
+
+  footer .container {
+      padding-bottom: 80px;
+  }
+
+  .Cards::before {
+      height: 1040px;
+  } 
+}
+
+@media (max-width:249px) {
+  .boostSec {
+      margin-top: 1160px;
+  }
+
+  .card h3 {
+      font-size: 18px;
+  }
+
+  .card {
+      padding: 56px 18px 24px;
+  }
+}
