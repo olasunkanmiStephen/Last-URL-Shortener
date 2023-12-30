@@ -3,7 +3,7 @@ import Logo from "./assets/logo.svg";
 import ill from "./assets/illustration-working.svg";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCopy, faCheck, faBars } from "@fortawesome/free-solid-svg-icons";
 import detailed from "./assets/icon-detailed-records.svg";
 import icon from "./assets/icon-brand-recognition.svg";
 import brand from "./assets/icon-brand-recognition.svg";
@@ -44,6 +44,13 @@ function App() {
     setCopySuccess(true);
   };
 
+  
+    const [menuOpen, setMenuOpen] = useState(false);
+    const handleMenu = ()=> {
+      setMenuOpen(!menuOpen);
+    }
+  
+
   return (
     <div>
       <div className="container">
@@ -68,33 +75,38 @@ function App() {
           </div>
         </div>
         <div className="mobileNav">
-          <div className="container">
-            <div className="logo">
-              <img src={Logo} alt="shortly logo image" />
-            </div>
-            <div className="berg">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div className="menu hidden">
-            <ul>
-              <li>Features</li>
-              <li>Pricing</li>
-              <li>Resources</li>
-            </ul>
-            <hr />
-            <ul>
-              <li>
-                <button>Login</button>
-              </li>
-              <li>
-                <button className="signUp">Sign Up</button>
-              </li>
-            </ul>
-          </div>
+      <div className="container">
+        <div className="logo">
+          <img src={Logo} alt="shortly logo image" />
+          <button onClick={handleMenu} className="bars">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
         </div>
+        <div className="berg">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      {menuOpen && (
+        <div className="menu hidden">
+          <ul>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Resources</li>
+          </ul>
+          <hr />
+          <ul>
+            <li>
+              <button>Login</button>
+            </li>
+            <li>
+              <button className="signUp">Sign Up</button>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
         <div className="land">
           <div className="ld-1">
             <h1>More than just shorter links</h1>
