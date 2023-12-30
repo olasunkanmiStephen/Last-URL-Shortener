@@ -164,15 +164,10 @@ button {
 }
 
 .bars{
-  display: flex;
-  align-items: center;
-  position: absolute;
   right:3%;
   font-size: 30px;
   font-weight: 800;
-  z-index: 2;
   color: var(--Dark-Violet);
-  top: 4%;
 }
 
 .prt{
@@ -414,8 +409,8 @@ ul li a:hover {
   font-size: 20px;
   background: var(--Cyan);
   padding: 30px;
-  z-index: 1;
-  display: none;
+  /* z-index: 1;
+  display: none; */
 }
 
 .mobileNav .berg span {
@@ -425,9 +420,9 @@ ul li a:hover {
   margin: 4px 0;
 }
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 .land{
   height: 90vh;
@@ -493,6 +488,10 @@ ul li a:hover {
 }
 
 @media (max-width:767px) {
+    .ld-1 h1{
+      font-size: 44px;
+    }
+
 
   .land {
       flex-direction: column-reverse;
@@ -587,6 +586,21 @@ ul li a:hover {
 @media (max-width:510px) {
    .boostSec {
       margin-top: 780px;
+  }
+
+  .div .container{
+    
+    flex-direction: column;
+  }
+
+  .div{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .div .right{
+    flex-direction: column;
+    text-align: center;
   }
 
   footer .right {

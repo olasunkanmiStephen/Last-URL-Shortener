@@ -4,11 +4,13 @@ import ill from "./assets/illustration-working.svg";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck, faBars } from "@fortawesome/free-solid-svg-icons";
+import {faFacebook, faInstagram, faPinterest, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import detailed from "./assets/icon-detailed-records.svg";
 import icon from "./assets/icon-brand-recognition.svg";
 import brand from "./assets/icon-brand-recognition.svg";
 import Lo from "./assets/logo.svg";
 import copyToClipboard from "clipboard-copy";
+
 
 function App() {
   const [inputUrl, setInputUrl] = useState("");
@@ -78,9 +80,7 @@ function App() {
       <div className="container">
         <div className="logo">
           <img src={Logo} alt="shortly logo image" />
-          <button onClick={handleMenu} className="bars">
-            <FontAwesomeIcon icon={faBars} />
-          </button>
+         
         </div>
         <div className="berg">
           <span></span>
@@ -106,6 +106,9 @@ function App() {
           </ul>
         </div>
       )}
+       <button onClick={handleMenu} className="bars">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
     </div>
         <div className="land">
           <div className="ld-1">
@@ -246,16 +249,16 @@ function App() {
               </ul>
               <ul className="social">
                 <li>
-                  <i className="fab fa-facebook-square" aria-hidden="true"></i>
+                  <FontAwesomeIcon icon={faFacebook} />
                 </li>
                 <li>
-                  <i className="fab fa-twitter"></i>
+                  <FontAwesomeIcon icon={faTwitter} />
                 </li>
                 <li>
-                  <i className="fab fa-pinterest" aria-hidden="true"></i>
+                  <FontAwesomeIcon icon={faPinterest} />
                 </li>
                 <li>
-                  <i className="fab fa-instagram" aria-hidden="true"></i>
+                <FontAwesomeIcon icon={faInstagram} />
                 </li>
               </ul>
             </div>
