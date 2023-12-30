@@ -58,6 +58,40 @@ function App() {
             </ul>
           </div>
         </div>
+        <div className="mobileNav">
+          <div className="container">
+            <div className="logo">
+                <img src={Logo} alt="shortly logo image" />
+            </div>
+            <div className="berg">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div className="menu hidden">
+            <ul>
+              <li>
+                Features
+              </li>
+              <li>
+                Pricing
+              </li>
+              <li>
+                Resources
+              </li>
+            </ul>
+            <hr />
+            <ul>
+              <li>
+                <button>Login</button>
+              </li>
+              <li>
+                <button className="signUp">Sign Up</button>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className="land">
           <div className="ld-1">
             <h1>More than just shorter links</h1>
@@ -82,10 +116,12 @@ function App() {
                 />
                 <button onClick={handleShortenUrl}>Shorten URL</button>
               </div>
+              
               {shortenedUrl && (
                 <div className="result">
+                  <p>{inputUrl}</p>
                   <a
-              href={shortenedUrl}
+                    href={shortenedUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -163,62 +199,35 @@ function App() {
             <div className="right">
               <ul>
                 <li className="name">Features</li>
-                <li>
-                  Link Shortening
-                </li>
-                <li>
-                  Branded Links
-                </li>
-                <li>
-                  Analytics
-                </li>
+                <li>Link Shortening</li>
+                <li>Branded Links</li>
+                <li>Analytics</li>
               </ul>
               <ul>
                 <li className="name">Resources</li>
-                <li>
-                  Blog
-                </li>
-                <li>
-                  Developers
-                </li>
-                <li>
-                  Support
-                </li>
+                <li>Blog</li>
+                <li>Developers</li>
+                <li>Support</li>
               </ul>
               <ul>
                 <li className="name">Company</li>
-                <li>
-                  About
-                </li>
-                <li>
-                  Our Team
-                </li>
-                <li>
-                  Careers
-                </li>
-                <li>
-                  Contact
-                </li>
+                <li>About</li>
+                <li>Our Team</li>
+                <li>Careers</li>
+                <li>Contact</li>
               </ul>
               <ul className="social">
                 <li>
-                    <i
-                      className="fab fa-facebook-square"
-                      aria-hidden="true"
-                    ></i>
+                  <i className="fab fa-facebook-square" aria-hidden="true"></i>
                 </li>
                 <li>
-                    <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter"></i>
                 </li>
                 <li>
-                  
-                    <i className="fab fa-pinterest" aria-hidden="true"></i>
-                
+                  <i className="fab fa-pinterest" aria-hidden="true"></i>
                 </li>
                 <li>
-                  
-                    <i className="fab fa-instagram" aria-hidden="true"></i>
-                  
+                  <i className="fab fa-instagram" aria-hidden="true"></i>
                 </li>
               </ul>
             </div>
