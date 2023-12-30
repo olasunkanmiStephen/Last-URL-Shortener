@@ -2,14 +2,18 @@ import "./App.css";
 import Logo from "./assets/logo.svg";
 import ill from "./assets/illustration-working.svg";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 import detailed from "./assets/icon-detailed-records.svg";
 import icon from "./assets/icon-brand-recognition.svg";
 import brand from "./assets/icon-brand-recognition.svg";
 import Lo from "./assets/logo.svg";
+import copyToClipboard from "clipboard-copy";
 
 function App() {
   const [inputUrl, setInputUrl] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const handleShortenUrl = async () => {
     const url = "https://url-shortener23.p.rapidapi.com/shorten";
@@ -33,6 +37,11 @@ function App() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleCopyToClipboard = () => {
+    copyToClipboard(shortenedUrl);
+    setCopySuccess(true);
   };
 
   return (
@@ -61,7 +70,7 @@ function App() {
         <div className="mobileNav">
           <div className="container">
             <div className="logo">
-                <img src={Logo} alt="shortly logo image" />
+              <img src={Logo} alt="shortly logo image" />
             </div>
             <div className="berg">
               <span></span>
@@ -71,15 +80,9 @@ function App() {
           </div>
           <div className="menu hidden">
             <ul>
-              <li>
-                Features
-              </li>
-              <li>
-                Pricing
-              </li>
-              <li>
-                Resources
-              </li>
+              <li>Features</li>
+              <li>Pricing</li>
+              <li>Resources</li>
             </ul>
             <hr />
             <ul>
@@ -116,9 +119,10 @@ function App() {
                 />
                 <button onClick={handleShortenUrl}>Shorten URL</button>
               </div>
-              
+
               {shortenedUrl && (
                 <div className="result">
+                  <div className="prt">
                   <p>{inputUrl}</p>
                   <a
                     href={shortenedUrl}
@@ -127,6 +131,18 @@ function App() {
                   >
                     {shortenedUrl}
                   </a>
+                  </div>
+                  <button onClick={handleCopyToClipboard}>
+                    {copySuccess ? (
+          <>
+            <FontAwesomeIcon icon={faCheck} />
+          </>
+        ) : (
+          <>
+            <FontAwesomeIcon icon={faCopy} />
+          </>
+        )}
+                  </button>
                 </div>
               )}
             </div>
