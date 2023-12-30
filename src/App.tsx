@@ -2,9 +2,10 @@ import "./App.css";
 import Logo from "./assets/logo.svg";
 import ill from "./assets/illustration-working.svg";
 import { useState } from "react";
-import detailed from './assets/icon-detailed-records.svg'
-import icon from './assets/icon-brand-recognition.svg'
-import brand from './assets/icon-brand-recognition.svg'
+import detailed from "./assets/icon-detailed-records.svg";
+import icon from "./assets/icon-brand-recognition.svg";
+import brand from "./assets/icon-brand-recognition.svg";
+import Lo from "./assets/logo.svg";
 
 function App() {
   const [inputUrl, setInputUrl] = useState("");
@@ -69,27 +70,32 @@ function App() {
             <img src={ill} alt="" />
           </div>
         </div>
-        <div className="Form">
-         <div className="gj">
-         <div className="fr">
-            <input
-              type="text"
-              value={inputUrl}
-              placeholder="Shorten URL"
-              onChange={(e) => setInputUrl(e.target.value)}
-            />
-            <button onClick={handleShortenUrl}>Shorten URL</button>
-          </div>
-          {shortenedUrl && (
-            <div className="result">
-              <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">
-                {shortenedUrl}
-              </a>
+        <div className="bg">
+          <div className="Form">
+            <div className="gj">
+              <div className="fr">
+                <input
+                  type="text"
+                  value={inputUrl}
+                  placeholder="Shorten URL"
+                  onChange={(e) => setInputUrl(e.target.value)}
+                />
+                <button onClick={handleShortenUrl}>Shorten URL</button>
+              </div>
+              {shortenedUrl && (
+                <div className="result">
+                  <a
+              href={shortenedUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {shortenedUrl}
+                  </a>
+                </div>
+              )}
             </div>
-          )}
-         </div>
-        </div>
-        <div className="text">
+          </div>
+          <div className="text">
             <div className="container">
               <h2>Advanced Statistics</h2>
               <p>
@@ -99,14 +105,10 @@ function App() {
             </div>
           </div>
           <div className="Cards">
-          <div className="container">
+            <div className="container">
               <div className="card">
                 <div className="img">
-                  <img
-                    src={brand}
-                    alt=""
-                    aria-hidden="true"
-                  />
+                  <img src={brand} alt="" aria-hidden="true" />
                 </div>
                 <div className="ctext">
                   <h3>Brand Recognition</h3>
@@ -119,11 +121,7 @@ function App() {
               </div>
               <div className="card">
                 <div className="img">
-                  <img
-                    src={detailed}
-                    alt=""
-                    aria-hidden="true"
-                  />
+                  <img src={detailed} alt="" aria-hidden="true" />
                 </div>
                 <div className="ctext">
                   <h3>Detailed Records</h3>
@@ -136,11 +134,7 @@ function App() {
               </div>
               <div className="card">
                 <div className="img">
-                  <img
-                    src={icon}
-                    alt=""
-                    aria-hidden="true"
-                  />
+                  <img src={icon} alt="" aria-hidden="true" />
                 </div>
                 <div className="ctext">
                   <h3>Fully Customizable</h3>
@@ -152,10 +146,82 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="boostSec">
+        </div>
+        <div className="boostSec">
           <div className="container">
             <h2>Boost your links today</h2>
             <button className="getStartedBtn">Get Started</button>
+          </div>
+        </div>
+        <div className="div">
+          <div className="container">
+            <div className="left">
+              <div className="logo">
+                <img src={Lo} alt="shortly logo image" />
+              </div>
+            </div>
+            <div className="right">
+              <ul>
+                <li className="name">Features</li>
+                <li>
+                  Link Shortening
+                </li>
+                <li>
+                  Branded Links
+                </li>
+                <li>
+                  Analytics
+                </li>
+              </ul>
+              <ul>
+                <li className="name">Resources</li>
+                <li>
+                  Blog
+                </li>
+                <li>
+                  Developers
+                </li>
+                <li>
+                  Support
+                </li>
+              </ul>
+              <ul>
+                <li className="name">Company</li>
+                <li>
+                  About
+                </li>
+                <li>
+                  Our Team
+                </li>
+                <li>
+                  Careers
+                </li>
+                <li>
+                  Contact
+                </li>
+              </ul>
+              <ul className="social">
+                <li>
+                    <i
+                      className="fab fa-facebook-square"
+                      aria-hidden="true"
+                    ></i>
+                </li>
+                <li>
+                    <i className="fab fa-twitter"></i>
+                </li>
+                <li>
+                  
+                    <i className="fab fa-pinterest" aria-hidden="true"></i>
+                
+                </li>
+                <li>
+                  
+                    <i className="fab fa-instagram" aria-hidden="true"></i>
+                  
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

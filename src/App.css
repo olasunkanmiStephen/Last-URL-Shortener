@@ -1,8 +1,27 @@
+:root {
+  --Cyan: hsl(180, 66%, 49%);
+  --Dark-Violet: hsl(257, 27%, 26%);
+  --message-bg: hsl(258, 26%, 36%);
+  --Red: hsl(0, 87%, 67%);
+  --Gray: hsl(0, 0%, 75%);
+  --Grayish-Violet: hsl(257, 7%, 63%);
+  --Grayish-sec: hsl(230, 25%, 95%);
+  --Very-Dark-Blue: hsl(255, 11%, 22%);
+  --Very-Dark-Violet: hsl(260, 8%, 14%);
+  --font-size: 18px;
+  --margin: 26px;
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bg{
+  background: var(--Grayish-sec);
+  margin-top: 80px;
 }
 
 body {
@@ -27,8 +46,10 @@ button {
 .nav{
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  padding: 0 30px ;
+  padding: 30px 70px 0 70px ;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--Gray);
 }
 
 .left img{
@@ -56,14 +77,14 @@ button {
 .land{
   display: flex;
   padding: 0 30px ;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  height: 100vh;
   h1{
-    font-size: 50px;
-
+    font-size: 60px;
   }
   p{
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
@@ -71,15 +92,28 @@ button {
   width: 100%;
 }
 
+.ld-1{
+  width: 37%;
+}
+
 /* form */
 
 .text {
   text-align: center;
+  margin-top: 70px;
 }
 
 .text h2 {
   font-size: 2.4rem;
   letter-spacing: -0.2px;
+}
+
+.text p {
+  color: var(--Grayish-Violet);
+  max-width: 522px;
+  margin: 11px auto 0;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
 }
 
 .Form{
@@ -90,7 +124,8 @@ button {
   align-items: center;
   width: 100%;
   border: none;
- 
+ position: relative;
+ top: -30px;
 }
 
 .Form .fr{
@@ -103,7 +138,7 @@ button {
 }
 
 .gj{
-  background-color: rgb(42, 9, 68);
+  background-color: var(--Dark-Violet);
   border-radius: 20px;
   width: 70%;
 }
@@ -211,7 +246,7 @@ button {
   text-align: center;
   background-image: url('./assets/bg-boost-desktop.svg');
   background-repeat: no-repeat;
-  background-color: rgb(58, 70, 66);
+  background-color: var(--Dark-Violet);
   background-size: cover;
   margin-top: 120px;
   padding: 54px 0 58px;
@@ -231,8 +266,92 @@ button {
 
 .boostSec button {
   margin-top: 22px;
+  background: var(--Cyan);
+  padding: 20px;
+  border-radius: 9px;
 }
 
+
+
+.div {
+  position: relative;
+  background-color: var(--Very-Dark-Violet);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div .container {
+  padding-top: 72px;
+  padding-bottom: 62px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.div .left {
+  flex-basis: 100%;
+}
+
+.div .logo {
+  margin-left: -3px;
+  width: 80%;
+  height: 70%;
+}
+
+.div .logo img {
+  filter: brightness(0) invert(1);
+}
+
+ul {
+  flex-basis: 30.5%;
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+ul li a {
+  color: var(--Grayish-Violet);
+  transition: 0.16s;
+  letter-spacing: -0.65px;
+}
+
+ul li a:hover {
+  color: var(--Cyan);
+}
+
+.div ul .name {
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.2px;
+}
+
+.div .right {
+  flex-basis: 100%;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.div .right .social {
+  font-size: 25px;
+  flex-basis: 21%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.div .right .social a {
+  color: white;
+  transition: 0.16s;
+}
+
+.div .right .social a:hover {
+  color: var(--Cyan);
+}
+ 
 
 
 
@@ -245,6 +364,11 @@ button {
 
 
 @media (max-width:991px) {
+
+  .nav ul{
+    position: absolute;
+    display: block;
+  }
 
   .Cards .container {
       flex-wrap: wrap;
